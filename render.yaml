@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sceneforge
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    envVars:
+      - key: RUNWAYML_API_SECRET
+        sync: false
+      - key: RUNWAY_VIDEO_MODEL
+        value: wan3
+      - key: RUNWAY_RATIO
+        value: "1280:720"
+      - key: SHOT_DURATION
+        value: "6"
+      - key: NODE_VERSION
+        value: "20"
